@@ -9,7 +9,12 @@ background: ${({ theme }) => theme.color["base-post"]};
 width: 26rem;
 height: 16,25rem;
 border-radius: 8px;
-padding: 1rem 2rem;
+padding: 2rem 2rem;
+
+&:hover{
+  border: 1px solid ${({ theme }) => theme.color["base-label"]};
+  outline: none;
+}
 `
 
 export const Title = styled.h3`
@@ -38,4 +43,12 @@ export const Description = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%; 
+`
+
+export const Post = styled.div`
+display: grid;
+grid-template-columns: repeat(2,1fr);
+gap: 2rem;
+padding-top: 4rem;
+
 `

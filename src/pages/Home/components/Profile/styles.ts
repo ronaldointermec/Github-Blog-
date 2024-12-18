@@ -41,30 +41,19 @@ width: 613px;
 color:${({ theme }) => theme.color["base-title"]};
 font-size: 14px;
 padding-bottom: 0.5rem;
+`
 
-span{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: ${({ theme }) => theme.color.blue};
-  
-}
+export const Git = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: ${({ theme }) => theme.color.blue};  
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
 
-svg{
-    margin-right: 6px;
-    color: ${({ theme }) => theme.color.blue};  
-   &:hover{
-      border-bottom: none;  
-   }
-  }
-
-  span, svg {
-    transition: border-color 0.2s ease;
-  }
-
-&:hover span, &:hover svg {
+  &:hover{
     border-bottom: 2px solid  ${({ theme }) => theme.color.blue};
-  }
+}
 `
 
 export const Followers = styled.footer`
