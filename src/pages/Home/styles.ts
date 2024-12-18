@@ -21,4 +21,12 @@ export const Publication = styled.div`
   span{
     color: ${({theme}) => theme.color["base-span"]};
   }
+  
+`
+
+export const Post = styled.div`
+display: grid;
+grid-template-columns: repeat(2,1fr);
+gap: 2rem;
+padding-top: 4rem;
 `

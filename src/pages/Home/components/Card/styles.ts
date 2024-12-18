@@ -37,18 +37,15 @@ export const Data = styled.span`
 `
 
 export const Description = styled.p`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  max-height: 6rem;
   margin-top: 1rem;
   line-height: 1.6;
-  /* white-space: nowrap; */
+  /* white-space: nowrap;  */
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%; 
+  /* max-width: 100%;  */
+  max-lines: 4;
 `
 
-export const Post = styled.div`
-display: grid;
-grid-template-columns: repeat(2,1fr);
-gap: 2rem;
-padding-top: 4rem;
-
-`

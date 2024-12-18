@@ -1,10 +1,14 @@
+import { useIssue } from "../../hooks/useIssue";
 import { Card } from "./components/Card";
-import { Post } from "./components/Card/styles";
 import { Profile } from "./components/Profile/indext";
 import { SearchForm } from "./components/SearchForm";
-import { Container, Publication } from "./styles";
+import { Container, Publication, Post } from "./styles";
+
 
 export function Home() {
+
+    const { issues } = useIssue()
+
     return (
         <Container>
             <Profile />
@@ -14,12 +18,15 @@ export function Home() {
             </Publication>
             <SearchForm />
             <Post>
+                { issues.map(issue =>{
+                    return( issue && <Card props={issue} key={issue.id} />)
+                })}
+                {/* <Card />
             <Card />
             <Card />
             <Card />
             <Card />
-            <Card />
-            <Card />
+            <Card /> */}
             </Post>
         </Container>
     )
