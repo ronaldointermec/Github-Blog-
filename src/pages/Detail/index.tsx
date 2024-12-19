@@ -38,6 +38,7 @@ interface DetailProps {
     created_at: string
     comments: number
     user: User
+    html_url:string
 }
 
 export function Detail() {
@@ -64,9 +65,17 @@ export function Detail() {
                             <FontAwesomeIcon icon={faChevronLeft} /> voltar
                         </Back>
                     </Link>
+
+                    <Link 
+                    // to={`https://github.com/ronaldointermec/Github-Blog-/issues/${postId}`}
+                    to={issue.html_url}
+                    target="_blank"
+                    style={{textDecoration: 'none', color: 'inherit'}}
+                    >
                     <Git>
                         ver no github  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                     </Git>
+                    </Link>
                 </Header>
                 <Content>
 

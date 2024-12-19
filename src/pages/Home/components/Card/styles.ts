@@ -7,9 +7,11 @@ justify-content: center;
 align-items: center;
 background: ${({ theme }) => theme.color["base-post"]};
 width: 26rem;
-height: 16,25rem;
+height: 16.5rem;
 border-radius: 8px;
 padding: 2rem 2rem;
+max-width: 26rem;
+max-height: 16.5rem;
 
 &:hover{
   border: 1px solid ${({ theme }) => theme.color["base-label"]};
@@ -19,6 +21,7 @@ padding: 2rem 2rem;
 
 export const Title = styled.h3`
 display: flex;
+height: 4rem;
 flex-direction: row;
 justify-content: center;
 align-items: top;
@@ -28,7 +31,8 @@ color: ${({ theme }) => theme.color["base-title"]};
 `
 
 export const Data = styled.span`
- white-space: nowrap;
+ /* white-space: nowrap; */
+ height: 4rem;
   /* overflow: hidden; */
   /* text-overflow: ellipsis; */
   max-width: 100%; /* ajuste o valor conforme necessário */
@@ -37,15 +41,14 @@ export const Data = styled.span`
 `
 
 export const Description = styled.p`
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  max-height: 6rem;
-  margin-top: 1rem;
+  height: 12.5rem;
+  /* margin-top: 1rem; */
   line-height: 1.6;
-  /* white-space: nowrap;  */
-  overflow: hidden;
+  overflow:  hidden ;
   text-overflow: ellipsis;
-  /* max-width: 100%;  */
-  max-lines: 4;
+  max-width: 100%;  
 `
 

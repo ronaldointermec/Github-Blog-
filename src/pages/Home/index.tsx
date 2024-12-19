@@ -21,12 +21,6 @@ export function Home() {
                 { issues.map(issue =>{
                     return( issue && <Card props={issue} key={issue.id} />)
                 })}
-                {/* <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card /> */}
             </Post>
         </Container>
     )

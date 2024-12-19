@@ -15,6 +15,7 @@ interface Issue {
 
 interface IssuesContextype {
     issues:Issue[]
+    fetchIssues: (query:string) => Promise<void>
 }
 
 interface IssueProviderProps {
@@ -27,19 +28,16 @@ export const IssuesContext = createContext({} as IssuesContextype)
 export function IssuesProvider({ children }: IssueProviderProps) {
     const [issues, setIssues] = useState<Issue[]>([])
 
-    // const query = 'repo:ronaldointermec/Github-Blog- Boas práticas para devs em início de carreira'
-    const query = 'repo:ronaldointermec/Github-Blog-'
 
-    const fetchIssues = useCallback(async () => {
+    const fetchIssues = useCallback(async (query?:string) => {
+          console.log(query)
         const response = await api.get('/search/issues', {
             params: {
-                q: query
+                q: `repo:ronaldointermec/Github-Blog- ${query ? query : ''}`
             }
         })
 
-
         setIssues(response.data.items)
-        // console.log(response.data)
 
     }, [])
 
@@ -49,7 +47,8 @@ export function IssuesProvider({ children }: IssueProviderProps) {
 
     return (
         <IssuesContext.Provider value={{
-            issues
+            issues,
+            fetchIssues
         }}>
             {children}
         </IssuesContext.Provider>

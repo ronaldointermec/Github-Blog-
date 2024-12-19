@@ -7,8 +7,9 @@ interface Issue {
     id: string
     title: string
     created_at: string
-    body: string;
+    body: string
     number: number
+   
 }
 
 
@@ -16,14 +17,6 @@ interface CardProps{
     props:Issue
 }
 export function Card({props} :CardProps ) {
-
-    // const navigate = useNavigate();
-
-    // const handleOnClick = () => {
-    //   navigate('/post/2/detail');
-    // };
-
-
 
     return (
         <Link to={`/post/${props.number}/detail`} style={{ textDecoration: 'none', color: 'inherit' }}>
